@@ -2,8 +2,13 @@ import React, { useState, ChangeEvent, FormEvent } from "react";
 import Dropdown from "../../shared/dropdown/Dropdown";
 import './Signup.css'
 import Login from "../login/Login";
+import { toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const SignUp: React.FC = () => {
+    const navigate = useNavigate();
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [confirmPassword, setConfirmPassword] = useState<string>("");
@@ -16,10 +21,27 @@ const SignUp: React.FC = () => {
         console.log("confirm password", confirmPassword);
         console.log("account Type", accountType);
 
+        if (
+            password.length < 8 ||
+            !/[A-Z]/.test(password) || 
+            !/[0-9]/.test(password) ||
+            !/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password) 
+        ) {
+            toast.error("Password must be at least 8 characters long and contain at least one uppercase letter, one number, and one special character.");
+            return; 
+        }
+        if (password !== confirmPassword) {
+            toast.error("Passwords do not match");
+            return; 
+        }
+
+        toast.success("Signup successful!");
         setUsername("");
         setPassword("");
         setConfirmPassword("");
         setAccountType("Teacher");
+
+        navigate("/");
     };
 
     const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -42,7 +64,7 @@ const SignUp: React.FC = () => {
         <>
             <div className="container">
                 <div className="login-container">
-                    <span className="heading">Welcome Back</span>
+                    <span className="heading">Sign-Up Here</span>
                     <small>
                         Hey there! Ready to log in? Just enter your username and
                         password below and you'll be back in action in no time.
@@ -65,6 +87,7 @@ const SignUp: React.FC = () => {
                                 placeholder="Enter your username"
                                 value={username}
                                 onChange={handleUsernameChange}
+                                required
                             />
                         </div>
                         <div className="password">
@@ -76,6 +99,7 @@ const SignUp: React.FC = () => {
                                 placeholder="Enter your password"
                                 value={password}
                                 onChange={handlePasswordChange}
+                                required
                             />
                         </div>
                         <div className="password">
@@ -86,6 +110,7 @@ const SignUp: React.FC = () => {
                                 placeholder="Re-enter your password"
                                 value={confirmPassword}
                                 onChange={handleConfirmPasswordChange}
+                                required
                             />
                         </div>
 

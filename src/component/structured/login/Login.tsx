@@ -3,6 +3,8 @@ import Dropdown from "../../shared/dropdown/Dropdown";
 import SignUp from "../signup/Signup";
 import './Login.css';
 import { Link } from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login: React.FC = () => {
     const [username, setUsername] = useState<string>("");
@@ -15,6 +17,9 @@ const Login: React.FC = () => {
         console.log("password", password);
         console.log("account Type", accountType);
 
+
+        toast.success("Login successful!");
+        
         setUsername("");
         setPassword("");
         setAccountType("Teacher");
@@ -59,6 +64,7 @@ const Login: React.FC = () => {
                                 placeholder="Enter your username"
                                 value={username}
                                 onChange={handleUsernameChange}
+                                required
                             />
                         </div>
                         <div className="password">
@@ -70,6 +76,7 @@ const Login: React.FC = () => {
                                 placeholder="Enter your password"
                                 value={password}
                                 onChange={handlePasswordChange}
+                                required
                             />
                         </div>
 
@@ -81,6 +88,7 @@ const Login: React.FC = () => {
                                     value=""
                                     name="default-radio"
                                     className="w-4 h-4 text-blue-600"
+                        
                                 />
                                 <label
                                     htmlFor="default-radio-1"
@@ -100,7 +108,7 @@ const Login: React.FC = () => {
                         </div>
 
                         <div className="submit">
-                            <button>
+                            <button type="submit">
                                 <b>Log In</b>
                             </button>
                         </div>
