@@ -1,14 +1,18 @@
-import { useState } from 'react'
-import './App.css'
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Login from "./component/structured/login/Login";
+import SignUp from "./component/structured/signup/Signup";
+
 
 function App() {
-  const [num, setNum] = useState<number>(0);
-
-  return (
-    <>
-      <h1 className="text-yellow-400">Hello World</h1>
-    </>
-  )
+	return (
+		<>
+			<Routes>
+				<Route path="/" element={<Login />} />
+				<Route path="/signup" element={<SignUp />} />
+			</Routes>
+		</>
+	);
 }
 
-export default App
+export default App;
