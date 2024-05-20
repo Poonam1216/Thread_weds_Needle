@@ -30,15 +30,6 @@
     font-size: 40px;
 }
 
-.remember-forgot-container{
-    display: flex;
-    justify-content: space-between;
-}
-
-.forgot-password
-{
-    text-decoration: underline;
-}
 
 .sign-up{
     display: flex;

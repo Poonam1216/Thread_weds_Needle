@@ -114,31 +114,6 @@ const SignUp: React.FC = () => {
                             />
                         </div>
 
-                        <div className="remember-forgot-container">
-                            <div className="remember">
-                                <input
-                                    id="default-radio-1"
-                                    type="checkbox"
-                                    value=""
-                                    name="default-radio"
-                                    className="w-4 h-4 text-blue-600"
-                                />
-                                <label
-                                    htmlFor="default-radio-1"
-                                    className="ms-2 text-sm font-medium text-gray-600"
-                                >
-                                    Remember Me
-                                </label>
-                            </div>
-                            <div className="forgot-password">
-                                <a
-                                    href="#"
-                                    className="ms-2 text-sm font-medium text-gray-600"
-                                >
-                                    Forgot Password?
-                                </a>
-                            </div>
-                        </div>
 
                         <div className="submit">
                             <button>
