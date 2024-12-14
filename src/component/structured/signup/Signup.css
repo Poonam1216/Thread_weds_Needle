@@ -1,0 +1,76 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container{
+    width: 600px;
+    height: auto;
+    padding: 20px;
+    border: 1px solid #f7f7f7;
+    border-radius: 10px;
+    background-color: #F7F7FA;
+}
+
+.inputs-container{
+    display: flex;
+    justify-content: center;
+ 
+}
+.inputs-container span{
+    text-decoration: underline;
+    margin-right: 30px;
+}
+.login-container .heading{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+}
+
+
+.sign-up{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.sign-up span a{
+    text-decoration: underline;
+    color: blue;
+}
+.user-name , .password{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name label, .password label{
+    font-size: 20px;
+    margin: 10px 0 5px 5px;
+}
+
+
+.user-name input , .password input{
+    padding: 8px;
+    font-size: 15px;
+    margin: 10px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+}
+
+.submit button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 30px;
+    background-color: #FFC224;
+    border-radius: 30px;
+}
+
+
+
